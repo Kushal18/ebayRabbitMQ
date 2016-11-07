@@ -1,0 +1,221 @@
+<style>
+.card {
+    box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+    transition: 0.3s;
+	padding: 30px;
+	background-color: #f1f1f1;
+	padding-left: 100px; 
+   
+}
+.simplecard {
+    background-color: white;		
+	border-style: solid solid solid solid;
+	border-width: 1px 1px 1px 1px;	
+	border-color: #d6d6d6;
+	
+}
+.bottomcard {
+	box-shadow: 4px 4px 4px 4px rgba(0,0,0,0.2);
+    transition: 0.3s;
+	padding: 80px;
+	
+	
+}
+.bottomInnerCard
+{
+	border-style: solid solid solid solid;
+	border-width: 1px 1px 1px 1px;	
+	transition: 0.3s;
+	padding: 80px;
+}
+
+</style>
+
+
+<div class="container" ng-controller="buyPageController"> <!-- container starts -->
+<div class="row"><!-- row for image starts -->
+<br>
+<div class="col-md-3">
+<img src="http://placehold.it/200x200" alt="...">
+<div ng-model="itemId"></div>
+</div>
+<div class="col-md-6">
+<div class="row">
+<div class="row"><!-- summary row starts-->
+<p ng-model="summary"> {{summary}} </p>
+</div> <!-- summary row ends-->
+<div class="row">
+<p>Item Condition:</p>
+</div>
+<div class="card"><!-- card -->
+<div class="row" ng-if="!bidding">
+<div class="col-md-8">
+<div class="col-md-6">
+<p ng-model="price">Price : US ${{price}}</p>
+</div>
+<div class="col-md-2"></div>
+
+<div class="col-md-6">
+<input type="button" value="Buy It Now" class="btn btn-primary" ng-click="buyItNow()">
+</div>
+</div>
+</div> 
+<div class="row" ng-if="!bidding">
+<div class="col-md-4"></div>
+
+<div class="col-md-6">
+<br>
+
+<input type="button" class="btn btn-info" value="Add to Cart" ng-click="AddtoCart()">
+<div ng-show="showCartMessage">
+<div class="alert alert-info">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Info!</strong> This Item was Added to the Cart.
+  </div>
+</div>
+<div ng-show="itemPresent">
+<div class="alert alert-warning">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> This Item already present in the Cart.
+  </div>
+</div>
+</div>
+</div>
+<div class="row">
+<div ng-if="bidding" >
+<div class="row">
+<div class="col-md-12">
+<p ng-model="owner">Seller Email : {{owner}}</p>
+<div class="col-md-8">
+<p ng-model="currentBiddingAmount">Current Bid : US ${{currentBiddingAmount}}</p>
+</div>
+<div class="col-md-2"></div>
+<div class="col-md-6">
+<div>
+<input type="text" class="form-control" ng-model="amount.newbidamount">
+</div>
+<br>
+<input type="button" class="btn btn-primary" value="Place Bid" ng-click="bidAmount()">
+</div>
+</div>
+</div> 
+</div>
+
+
+</div>
+</div><!-- card -->
+<div class="row">
+<div class="col-md-6">
+<ul class="list-group list-group-flush" style="width:350px;">
+<li class="list-group-item" style="color:red" ng-model="quantity">Available Quantity: {{quantity}}</li>
+</ul>
+</div>
+<div class="col-md-6">
+<ul class="list-group list-group-flush">
+<li class="list-group-item">Located In United States</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div> <!-- row for image ends -->
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-2">Shipping Details:</div>
+<div class="col-md-6">
+<p ng-model="address">{{address}}</p>
+</div>
+<div class="col-md-4">
+</div>
+</div> 
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-2">
+<p>Payments:</p>
+</div>
+<div class="col-md-4">
+<img style="margin-right:10px;" src="http://ir.ebaystatic.com/pictures/aw/pics/logos/logoPayPal_51x14.png" border="0">
+<img src="http://ir.ebaystatic.com/pictures/aw/pics/logos/CC_icons.png" title="Visa/MasterCard, Amex, Discover">
+</div>
+</div>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-2">
+</div>
+<div class="col-md-4">
+<img src="http://ir.ebaystatic.com/pictures/aw/pics/logos/logoPaypalCredit_104x16.png" class="pd-ppc-img" alt="PayPal Credit">
+</div>
+</div>
+<div class="row">
+<div class="col-md-2"></div>
+<div class="col-md-2">
+</div>
+<div class="col-md-4">
+<span>Get more time to pay</span>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+Returns:
+</div>
+<div class="col-md-4">
+<span>
+30 days money back, buyer pays return shipping, 15% restocking fee may apply</span>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+Gurantee:
+</div>
+<div class="col-md-4">
+<span><img class="bodyImg" src="images/ebay.jpg"><span class="hideforacc">Money Back Guarantee</span></span>
+</div>
+</div>
+<div class="row">
+<div class="col-md-2">
+</div>
+<div class="col-md-2">
+</div>
+<div class="col-md-4">
+<span>Get the item you ordered or get your money back.
+Covers your purchase price and original shipping.</span>
+</div>
+</div>
+<div class="row">
+	<div>
+	<div class="row">
+	<div class="col-md-12">
+    <span><input type="button" class="btn btn-default" value="Description" style="color:blue" ng-click="descriptionButton()">
+    <input type="button" class="btn btn-default" value="Shipping and Payment Details" style="color:blue" ng-click="shippingAndPayment()">
+    </span>
+    <div ng-show="description">
+    <div class="bottomcard" style="background-color:white">
+    <span>Item Specifics</span>
+    <div class="bottomInnerCard">
+    <span ng-model="summary">{{summary}}</span>
+    </div>
+    </div>
+	</div>
+    <div ng-show = "!description">
+     <div class="bottomcard" style="background-color:white">
+    <span>Payment Details</span>
+    <div class="bottomInnerCard">
+    <span ng-model="address">{{address}}</span>
+    </div>
+    </div>
+    </div>
+   	</div>
+   </div>
+
+</div>
+</div>
+</div> <!-- container ends -->
+<br>
+<br>
+<br>

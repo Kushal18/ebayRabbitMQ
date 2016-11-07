@@ -1,0 +1,123 @@
+<style>
+.card {
+ 	transition: 0.3s;
+	padding: 30px;
+}
+</style>
+<br>
+<br>
+<div class="container" ng-controller="checkOutController"> <!-- container starts -->
+<div class="row">
+<div class="col-md-8">
+<!--  div class="card" style="background-color: white;">
+<h2>Enter Your Card Details Below</h2>
+<div class="input-group">
+<input type="text"  class="form-control" placeholder="enter your credit card number here"  ng-model="creditCard">
+<span class="input-group-addon" id="basic-addon2">Credit Card Number</span>
+</div>
+<br>
+<div class="input-group date">
+    <input type="month" class="form-control" value="2016-08">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th">Expiry Date</span>
+    </div>
+</div>
+<br>
+<div class="input-group">
+<input type="password"  class = "form-control" name = "cvvNumber" placeholder="cvv" >
+<span class="input-group-addon" id="basic-addon2" ng-model="cvv" ng-blur="cvv()">Cvv</span>
+</div>
+<br>
+  
+</div--><!-- card -->
+<md-content layout-padding>
+    <!--  form name="userForm"-->
+      <div layout="column">
+      <div flex>
+      <md-input-container class="md-block" flex-gt-sm>
+          <label>Credit Card Number</label>
+          <input md-maxlength="16" required name="Card Number" ng-model="cardNumber" />
+		  <div ng-show="required">Name is required.</div>
+		  </md-input-container>
+      
+      </div>
+      <div flex>
+   <md-input-container class="md-block" flex-gt-sm>
+          <label>Expiry Date</label>
+          <input placeholder="YYYY/MM" ng-model="expiryDate" />
+		</md-input-container>
+    </div>
+	   <div flex>
+        <md-input-container class="md-block" flex-gt-sm>
+          <label>Cvv</label>
+          <input md-maxlength="3" required name="Card Number" ng-model="cvv" />
+		</md-input-container>
+		</div>
+    </div>
+    
+  
+		
+
+    <!--  /form-->
+  </md-content>
+</div>
+<div class="col-md-3"></div>
+<div class="col-md-3">
+<div class="card" style="background:white">
+<div ng-show="errorMessage">
+<div class="alert alert-warning">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <div ng-model="error">{{error}}!</div>
+  	</div>
+</div>
+<div class="row" ng-model="items"><span>Total items in the cart ({{items}})</span></div>
+<div class="row"><span>Shipping</span></div>
+<div class="row"><span>_______________________________</span></div>
+<div class="row" ng-model="price"><span>Your Order Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+${{price}}</span></div>
+<br>
+<br>
+<button type="submit" class="btn btn-primary btn-block" class="btn btn-primary" ng-click="confirmAndPay()">Confirm And Pay Now</button>
+</div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8">
+<h3>Review your Cart Details</h3>
+<!-- to be removed -->
+
+<div class="card" style="background:white">
+<div class="row" ng-repeat="result in results"> <!-- ng repeat here -->
+<div class="col-md-1"></div>
+<div class="col-md-4">
+<img src="http://placehold.it/200x200" alt="...">
+<br>
+<br>
+<span ng-model="itemToSell">{{result.itemToSell}}</span>
+</div>
+<div class="col-md-4" ng-model="summary">
+<h3>{{result.summary}}</h3> <!--  -->
+<div class="row">
+<div class="col-md-1" ng-model="price">
+<h3>${{result.price}}</h3>
+</div>
+</div>
+<div class="row">
+<h4 ng-model="quantity">&nbsp;&nbsp;quantity available: {{result.quantity}}</h4>
+<div class="col-md-5">
+<input type="button" class="btn btn-primary btn-block" value="Remove" ng-click="removeFromTheCart(result.ItemId)">
+</div>
+</div>
+<hr>
+</div>
+
+</div>
+</div>
+<!-- to be removed -->
+</div>
+</div>
+</div>
+
+
+
+

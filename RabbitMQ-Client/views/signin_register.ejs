@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+<head>
+<title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<!-- cookies -->    
+<script src="http://code.angularjs.org/1.0.0rc10/angular-cookies-1.0.0rc10.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css">
+    
+<style>
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 30px;
+    
+   width: 320px;
+}
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+    .test{
+    padding-left: 100px;
+    }
+    .center{
+    padding-left: 470px;
+    }
+    .background{
+     background-color: #f1f1f1;   
+        
+    }
+    .custom {
+    width: 100px;
+    height: 50px;
+}
+    .headPadding{
+     padding-left : 150px;   
+    }
+    
+
+</style>
+<script src="angularjs/frontEnd.js"></script>
+  </head>
+<body class="background">
+   <div class="container">
+   <div class="row">
+   <div class="col-md-4">
+   </br>
+   </br>
+   </br>       
+   <img class="center" src="images/ebay.jpg">    
+   </div>
+   <div class="col-md-4" ng-show="login">
+   <h2>Please Sign to Sell</h2>
+   </div>
+   <div class="col-md-4">
+   </br>
+   </br>
+   </br>
+   </br>
+   </br>
+   </br>
+   <div class="card" style="background:white">
+   <div class="card-header" >
+       <div class="row">
+   <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#/signin" role="tab">Sign in</a>
+      </li>
+       
+   <li  class="navbar-right"><a class="nav-link active right" class="center" data-toggle="tab" href="#/register" role="tab" href="#/register">Register</a></li>
+  </ul>
+   </br>
+   </br>
+   <div ng-view></div>
+   </div>  <!-- col-md-4 -->
+   </div> <!-- card -->
+</div>
+   </div> <!-- container-->
+</body>
+</html>

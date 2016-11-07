@@ -1,0 +1,74 @@
+
+<style>
+.card {
+    transition: 0.3s;
+	padding: 30px;
+}
+</style>
+
+<br>
+<br>
+<div class="container" class="ebay" ng-controller="sellController">
+<div class="card" style="background:white">
+<div class="row">
+<div class="col-md-12">
+<div class="checkbox">
+  <label><input type="checkbox" ng-model="auction">Bid This Item</label>
+</div>
+<label for="text">Item to Sell:</label>
+<input type="text" class="form-control" ng-model="itemToSell">
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<label for="text">Price:</label>
+<input type="text" class="form-control" ng-model="price">
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<label for="text">Seller Name:</label>
+<input type="text" class="form-control" ng-model="sellerName">
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<label for="text">Quantity:</label>
+<input type="text" class="form-control" ng-model="quantity">
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<label for="text">Brief Summary about the Product:</label>
+<textarea class="form-control" rows="3" ng-model="summary"></textarea>
+</div>
+</div>
+<div class="row">
+<div class="col-md-12">
+<label for="text">Please Add the key elements about your item:</label>
+</div>
+<div class="col-md-4">
+1.<input type="text" class="form-control" ng-model="feature1">
+2.<input type="text" class="form-control" ng-model="feature2">
+3.<input type="text" class="form-control" ng-model="feature3">
+4.<input type="text" class="form-control" ng-model="feature4">
+</div>
+
+</div>
+<div class="row">
+<div class="col-md-12">
+<label for="text">Shipment Address:</label>
+<textarea class="form-control" rows="3" ng-model="address"></textarea>
+</div>
+</div>
+<br>
+<div class="row">
+    <div class="col-md-12">
+    <input type="button" class="btn btn-primary btn-block" value="Save My Details" ng-click="saveMyDetails()">
+    </div>
+</div>
+<br>
+<br>
+<br>
+</div>
+</div>

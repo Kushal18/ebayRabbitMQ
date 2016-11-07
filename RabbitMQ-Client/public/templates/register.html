@@ -1,0 +1,54 @@
+<div class ="container" ng-controller="registerController">
+<div class="row">
+<div class="col-md-6-offset-3">
+<input style="width:270px;" type="email" class="form-control" placeholder="Email" ng-model="email" ng-blur="emailValidation()"  required>
+</br>
+<div class="alert" ng-show="emailError">
+<p>this mail is not valid!</p>
+</div>
+<input style="width:270px;" placeholder="Reenter email" class = "form-control" type="text" ng-model="reenter_email" ng-blur="reenterValidation()"/>
+<div class="alert" ng-show="reenterEmail">
+<p>Both the fields value should match!</p>
+</div>
+</br>
+<input style="width:270px;"    placeholder="Password" 
+class="form-control" type="password" ng-model="password"  ng-focus="password()" ng-blur="afterPassword()"/>
+<div class="alert" ng-show="alert">
+    <ul class="inline" style="width:270px">
+    <li>Use 6 to 64 characters.</li>
+    <li>Besides letters, include at 
+        least a number or symbol (!@#$%^-+=).</li>
+    <li>Password is case sensitive.</li>
+    <li>Avoid using the same password for multiple sites.</li>
+    </ul>
+</div>    
+</br>
+</br>
+<form action="" class="form-inline">
+    <div class="form-group">
+        <input style="width:135px;" type="text" class="form-control" placeholder="First name" ng-model="firstName">
+    </div>
+    <div class="form-group">    
+    <input style="width:135px;" type="text" class="form-control" placeholder="Last name" ng-model="lastName">
+    </div>
+</form>
+</br>
+<input style="width:270px;" placeholder="Mobile Phone" class="form-control" type="text" ng-model="mobilePhone" ng-blur="phoneValidate()"/>
+<div class="alert alert warning" ng-show="phone">
+<p>this phone number is not valid</p>
+</div>
+</br>
+<input style="width: 275px;" type="submit" value="Register" id="" class="btn ipb btn-primary" ng-click="register()">
+<div ng-show="registerSuccess">
+<div class="col-md-3">
+<div class="alert alert-info">
+    <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Info!</strong> You Have Registered Successfully.
+  </div>
+</div>
+</div>
+</div>
+</br>
+</div>
+</div>
+</div>

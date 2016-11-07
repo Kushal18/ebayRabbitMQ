@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+<head>
+<title><%= title %></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+<!-- cookies -->    
+<script src="http://code.angularjs.org/1.0.0rc10/angular-cookies-1.0.0rc10.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.1/angular-material.min.css">
+<style>
+    .custom {
+    width: 100px;
+    height: 50px;
+}
+    .headPadding{
+     padding-left : 150px;   
+    }
+   .ebay{
+     background-color: #f1f1f1;   
+        
+    }
+    
+    
+</style>    
+   
+<script src="angularjs/frontEnd.js"></script>
+</head>
+<body style="background-color: #f1f1f1;">
+<div class="container" ng-cloak>
+<div class="row" ng-controller="homeController">
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <ul class="nav nav-pills card-header-pills pull-xs-left">
+     <!--div ng-show="signInHide"-->
+      <li class="nav-item" ng-show="signInHide">
+        <a class="nav-link active" href="http://localhost:3000/signin#/signin">Sign in</a>
+      </li>
+        <!--/div-->
+        <!--div ng-show="showUserName"-->
+        <div ng-show="showUserName">
+      <li class="nav-item">
+        <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown">Hi {{username}}!<b class="caret"></b></a>
+        <span ng-model="lastLogin">&nbsp;&nbsp;&nbsp;&nbsp;Last Logged In {{lastLogin}}</span>
+            <ul class="dropdown-menu">
+            <li><a href="#/getMycollection">My Collections</a></li>
+            <li><a href="#/myAccount">Account Settings</a></li>
+            <li><a ng-click="logOut()">Sign out</a></li>
+        </li>
+        </li>
+        </div>
+        <!--/div-->
+<li class="test">
+<a style="padding-left:60px"href="http://localhost:3000/signin#/register">Register</a></li>
+   <li><a>|</a></li>    
+   <li class="test"><a href="">Daily Deals</a></li>
+   <li><a>|</a></li>
+   <li class="test"><a href="">Gift Cards</a></li>        
+   <li><a>|</a></li>
+   <li class="test"><a href="#/sell">Sell</a></li>
+   <li><a>|</a></li>
+   <li class="test"><a href="">Help & Contact</a></li>
+   <li class="body"><a href="#/myEbay">My eBay</a></li>    
+   <li><a href="#/cardDetails">
+   <span class="glyphicon glyphicon-shopping-cart">Cart</span>
+   <span class="badge" ng-model="badge">{{badge}}</span>
+   </a></li>
+   </ul>
+    </nav>
+    </br>
+    </br>
+    </br>
+    </br>
+    <div class="row"><!--div class 2ndrow starts here-->
+<div class="col-md-2"><img class="bodyImg" src="images/ebay.jpg"></div>
+<div class="col-md-8"> 
+<input type="text" style="height:50px" class="form-control"  placeholder="Search..." class="text" ng-model="search"/>
+</div>
+<div class="col-md-2">
+<a href="#/search"> 
+<input type="submit" class="btn btn-primary custom" value="Search"
+ng-click="searchButton()">
+</a>
+</div>    
+</div><!--div class 2ndrow ends here-->
+    </div>
+    <div>
+    <div ng-view></div>
+	</div><!--container-->
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<style>
+.card {
+    transition: 0.3s;
+	padding: 30px;
+}
+</style>
+<div class="container" ng-controller="myCollection">
+<br>
+<br>
+<div class="row">
+<div class="col-md-8">
+<h3>My Collections</h3>
+<div class="card" style="background:white">
+<div ng-repeat="result in results">
+<div class="row"> 
+<div class="col-md-4">
+<img src="http://placehold.it/200x200" alt="...">
+<br>
+<br>
+<br>
+</div>
+<div class="col-md-2"></div>
+<div class="col-md-6" ng-model="summary">
+<h2>{{result.summary}}</h2> <!--  -->
+<div class="row">
+<div class="col-md-8" ng-model="price">
+<h3>Price: ${{result.price}}</h3>
+</div>
+</div>
+<div class="row">
+<div class="col-md-8" ng-model="quantity">
+<h3>Available Now : {{result.quantity}}</h3>
+</div>
+</div>
+</div>
+</div>
+<hr>
+</div>
+</div>
+</div>
+</div>
+</div>
